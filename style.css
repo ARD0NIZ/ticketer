@@ -1,12 +1,13 @@
 :root {
     --bg-dark: #040510;
     --bg-darker: #010208;
-    --accent: #5865f2;
-    --accent-light: #8c9eff;
+    /* Accent updated to match Ticketer logo color (teal) */
+    --accent: #1abc9c;
+    --accent-light: #62d6b3;
     --text-primary: #f6f7ff;
     --text-secondary: rgba(246, 247, 255, 0.7);
     --card-bg: rgba(12, 15, 34, 0.8);
-    --card-border: rgba(140, 158, 255, 0.2);
+    --card-border: rgba(98, 214, 179, 0.12);
     --shadow: 0 20px 40px rgba(8, 12, 33, 0.45);
 }
 
