@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>/remove Command - Ticketer</title>
+    <title>/statistics Command - Ticketer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="icon" type="image/png" href="../Bilder/Logo.png" sizes="512x512">
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="/remove Command - Ticketer">
+    <meta property="og:title" content="/statistics Command - Ticketer">
     <meta name="theme-color" content="#003fef">
 </head>
 
@@ -38,36 +38,37 @@
             <a href="../commands.html" class="back-link">← Back to Commands</a>
             
             <div class="command-header">
-                <h1>/remove</h1>
-                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Remove a user from the current ticket</p>
+                <h1>/statistics</h1>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Display bot statistics and ticket metrics</p>
             </div>
 
             <div class="command-description-card">
                 <h2>Description</h2>
-                <p>The <code>/remove</code> command allows support staff to remove users from a ticket channel. This revokes their access to the conversation and they can no longer view or send messages.</p>
+                <p>The <code>/statistics</code> command displays comprehensive statistics about the bot including server count, user count, performance metrics, and detailed ticket statistics.</p>
                 
                 <div class="command-usage">
-                    /remove &lt;user&gt;
+                    /statistics
                 </div>
 
-                <h3 style="margin-top: 2rem;">Parameters</h3>
+                <h3 style="margin-top: 2rem;">Statistics Sections</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>user</strong> (required): The Discord user to remove from the ticket</li>
+                    <li><strong>About</strong>: Guild count, user count, ping, command count, and uptime</li>
+                    <li><strong>Live Stats - Tickets</strong>: Total tickets created, claimed, deleted, and pending</li>
+                    <li><strong>Functions Used - Tickets</strong>: Transcript, reopen, and close counts</li>
                 </ul>
 
                 <h3 style="margin-top: 2rem;">How it works</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Revokes all permissions for the specified user in the ticket channel</li>
-                    <li>The user can no longer see the ticket or its messages</li>
-                    <li>Remaining participants are notified of the removal</li>
-                    <li>The action is logged in the ticket transcript</li>
+                    <li>Displays real-time bot statistics and metrics</li>
+                    <li>Shows ticket system usage and performance data</li>
+                    <li>Includes bot latency and uptime information</li>
+                    <li>Provides insights into ticket workflow and management</li>
                 </ul>
 
                 <h3 style="margin-top: 2rem;">Permissions Required</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Must be used in a ticket channel</li>
-                    <li>Must have support role or administrator permissions</li>
-                    <li>Cannot remove the ticket creator or support staff</li>
+                    <li>Can be used by anyone in the server</li>
+                    <li>No special permissions required</li>
                 </ul>
             </div>
 
@@ -75,30 +76,29 @@
                 <div class="discord-embed">
                     <div class="embed-author">
                         <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
-                        <span class="embed-author-name">Ticketer</span>
+                        <span class="embed-author-name">smarticle_particles</span>
                     </div>
-                    <div class="embed-title">🚫 Remove User from Ticket?</div>
+                    <div class="embed-title">Ticketer Website</div>
                     <div class="embed-description">
-                        Are you sure you want to remove this user from the ticket? They will lose access to this channel immediately.
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">User to Remove</div>
-                        <div class="embed-field-value">@username</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Removed by</div>
-                        <div class="embed-field-value">@moderator</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Ticket ID</div>
-                        <div class="embed-field-value">#0042</div>
-                    </div>
-                    <div class="embed-footer">
-                        <span class="embed-footer-text">User will no longer see this channel • Ticket System</span>
-                    </div>
-                    <div class="discord-buttons">
-                        <button class="discord-button danger">Confirm Remove</button>
-                        <button class="discord-button secondary">Cancel</button>
+                        <strong>About</strong><br>
+                        Guild Count: 12<br>
+                        User Count: 406<br>
+                        Ping: 45ms<br>
+                        DP Ping: 1.36ms<br>
+                        Command Count: 7<br>
+                        Uptime: 16 Days, 7 Hours, 33 Minutes<br><br>
+                        
+                        <strong>Live Stats - Tickets:</strong><br>
+                        Tickets total created: 13<br>
+                        Tickets claimed: 4<br>
+                        Tickets deleted: 7<br>
+                        Tickets pending: 6<br>
+                        ↪ Tickets in Closed or Reopened state<br><br>
+                        
+                        <strong>Functions Used - Tickets:</strong><br>
+                        Ticket transcript: 6<br>
+                        Ticket reopen: 2<br>
+                        Ticket close: 7
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
             </div>
 
             <div class="command-nav">
-                <a href="add.html">← /add</a>
+                <a href="ticketcontrolpanel.html">← /ticketcontrolpanel</a>
                 <a href="../commands.html">All Commands</a>
                 <a href="config.html">/config →</a>
             </div>

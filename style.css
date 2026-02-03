@@ -555,7 +555,7 @@ body.has-nav {
 .command-card h3 {
     margin: 0;
     font-size: 1.25rem;
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .command-card p {
