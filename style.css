@@ -6,9 +6,12 @@
     --accent-light: #4d7fff;
     --text-primary: #f6f7ff;
     --text-secondary: rgba(246, 247, 255, 0.7);
-    --card-bg: rgba(20, 20, 30, 0.9);
+    --card-bg: rgba(20, 20, 30, 0.75);
+    --card-bg-glass: rgba(255, 255, 255, 0.05);
     --card-border: rgba(77, 127, 255, 0.2);
+    --card-border-glass: rgba(255, 255, 255, 0.1);
     --shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    --shadow-glass: 0 8px 32px rgba(0, 63, 239, 0.15);
 }
 
 * {
@@ -166,14 +169,23 @@ main {
 }
 
 .feature-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--card-border-glass);
     border-radius: 18px;
     padding: 1.8rem;
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     display: grid;
     gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 63, 239, 0.25);
 }
 
 .feature-card h3 {
@@ -512,12 +524,13 @@ body.has-nav {
 }
 
 .command-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--card-border-glass);
     border-radius: 18px;
     padding: 1.8rem;
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     display: grid;
     gap: 0.75rem;
     text-decoration: none;
@@ -527,6 +540,7 @@ body.has-nav {
 .command-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 25px 50px rgba(0, 63, 239, 0.4);
 }
 
@@ -552,13 +566,28 @@ body.has-nav {
 
 /* Discord Embed Mockup */
 .discord-embed {
-    background: #2f3136;
+    background: linear-gradient(135deg, rgba(47, 49, 54, 0.95) 0%, rgba(47, 49, 54, 0.85) 100%);
     border-left: 4px solid var(--accent);
     border-radius: 4px;
     padding: 1rem 1rem 1rem 0.75rem;
     max-width: 520px;
     margin: 1.5rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--accent);
+}
+
+.embed-preview {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .embed-author {
@@ -679,34 +708,47 @@ body.has-nav {
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem;
-    background: var(--card-bg);
+    background: var(--card-bg-glass);
     border-radius: 18px;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--card-border-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass);
 }
 
 .command-usage {
     font-family: 'Courier New', monospace;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     padding: 1rem 1.5rem;
     border-radius: 8px;
     font-size: 1.1rem;
     color: var(--accent);
     margin: 1rem 0;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--card-border-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .command-description-card {
-    background: var(--card-bg);
+    background: var(--card-bg-glass);
     border-radius: 18px;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--card-border-glass);
     padding: 2rem;
     margin-bottom: 2rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass);
 }
 
 .embed-preview {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .back-link {
@@ -734,17 +776,21 @@ body.has-nav {
     flex: 1;
     text-align: center;
     padding: 1rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--card-border-glass);
     border-radius: 12px;
     text-decoration: none;
     color: var(--text-primary);
     transition: all 0.3s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .command-nav a:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-glass);
 }
 
 @media (max-width: 768px) {
