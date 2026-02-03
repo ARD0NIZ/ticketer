@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Commands - Ticketer</title>
+    <meta name="author" content="windows">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/png" href="Bilder/Logo.png" sizes="512x512">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Commands - Ticketer">
+    <meta property="og:description" content="Complete command reference for Ticketer bot">
+    <meta property="og:image" content="https://ard0niz.github.io/ticketer/Bilder/Logo_BG.png">
+    <meta name="theme-color" content="#003fef">
+</head>
+
+<body class="has-nav">
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="Bilder/Logo.png" alt="Ticketer Logo">
+                <span>Ticketer</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="commands.html" class="active">Commands</a></li>
+                <li><a href="tos.pp.html">ToS & Privacy</a></li>
+                <li><a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="commands-section">
+            <div class="section-header">
+                <h1>Bot Commands</h1>
+                <p>Complete reference for all Ticketer commands. Click on a command to see detailed information and examples.</p>
+            </div>
+            
+            <div class="commands-grid">
+                <a href="commands/ticket.html" class="command-card">
+                    <code class="command-name">/ticket</code>
+                    <h3>Create Ticket</h3>
+                    <p>Open a new support ticket in your server. Users can describe their issue and get personalized help.</p>
+                </a>
+                
+                <a href="commands/close.html" class="command-card">
+                    <code class="command-name">/close</code>
+                    <h3>Close Ticket</h3>
+                    <p>Close the current ticket channel and automatically generate a complete transcript of the conversation.</p>
+                </a>
+                
+                <a href="commands/add.html" class="command-card">
+                    <code class="command-name">/add</code>
+                    <h3>Add User to Ticket</h3>
+                    <p>Add another user to the current ticket channel so they can view and participate in the conversation.</p>
+                </a>
+                
+                <a href="commands/remove.html" class="command-card">
+                    <code class="command-name">/remove</code>
+                    <h3>Remove User from Ticket</h3>
+                    <p>Remove a user from the current ticket channel, revoking their access to the conversation.</p>
+                </a>
+                
+                <a href="commands/config.html" class="command-card">
+                    <code class="command-name">/config</code>
+                    <h3>Configure Bot</h3>
+                    <p>Set up and customize Ticketer for your server: ticket categories, transcript channels, support roles, and more.</p>
+                </a>
+                
+                <a href="commands/help.html" class="command-card">
+                    <code class="command-name">/help</code>
+                    <h3>Get Help</h3>
+                    <p>Display a list of all available commands with brief descriptions and usage information.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p>&copy; 2024 Alpha Development | Developers.com</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                <a href="index.html">Home</a> · 
+                <a href="commands.html">Commands</a> · 
+                <a href="tos.pp.html">ToS & Privacy</a> · 
+                <a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
