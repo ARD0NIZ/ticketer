@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ticketer</title>
+    <title>Ticketer - Professional Ticket Management</title>
     <meta name="author" content="windows">
     <meta name="date" content="2023-05-12T11:14:05+0200">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="Bilder/Logo.png">
+    <link rel="icon" type="image/png" href="Bilder/Logo.png" sizes="512x512">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,24 @@
 
 </head>
 
-<body>
+<body class="has-nav">
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="Bilder/Logo.png" alt="Ticketer Logo">
+                <span>Ticketer</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="commands.html">Commands</a></li>
+                <li><a href="tos.pp.html">ToS & Privacy</a></li>
+                <li><a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header class="hero">
         <img src="Bilder/Banner.jpg" alt="Ticketer Banner" class="hero-image">
         <div class="hero-overlay"></div>
@@ -64,19 +81,51 @@
             <p class="feature-note">Additional events and features are added on a regular basis.</p>
         </section>
 
-        <section class="stats-section" aria-labelledby="stats-title">
-            <div class="stats-card">
-                <h2 id="stats-title">Live statistics</h2>
-                <p class="stats-text">Users: <span id="userCount">failed</span> &nbsp;|&nbsp; Servers: <span id="guildCount">failed</span></p>
-                <p class="stats-hint">Data is synchronised with the bot in real time.</p>
+        <section class="commands-section" aria-labelledby="commands-title">
+            <div class="section-header">
+                <h2 id="commands-title">Bot Commands</h2>
+                <p>Explore all available commands and learn how to use Ticketer effectively.</p>
             </div>
-            <aside class="patch-card" aria-labelledby="patch-title">
-                <h3 id="patch-title">Latest patch notes</h3>
-                <ul>
-                    <li><span class="status-add">+ Added:</span> Config command</li>
-                </ul>
-            </aside>
+            <div class="commands-grid">
+                <a href="commands/ticket.html" class="command-card">
+                    <code class="command-name">/ticket</code>
+                    <h3>Create Ticket</h3>
+                    <p>Open a new support ticket in your server.</p>
+                </a>
+                <a href="commands/close.html" class="command-card">
+                    <code class="command-name">/close</code>
+                    <h3>Close Ticket</h3>
+                    <p>Close the current ticket and generate a transcript.</p>
+                </a>
+                <a href="commands/add.html" class="command-card">
+                    <code class="command-name">/add</code>
+                    <h3>Add User</h3>
+                    <p>Add a user to the current ticket channel.</p>
+                </a>
+                <a href="commands/remove.html" class="command-card">
+                    <code class="command-name">/remove</code>
+                    <h3>Remove User</h3>
+                    <p>Remove a user from the current ticket channel.</p>
+                </a>
+                <a href="commands/config.html" class="command-card">
+                    <code class="command-name">/config</code>
+                    <h3>Configure Bot</h3>
+                    <p>Set up ticket categories, transcripts channel, and more.</p>
+                </a>
+                <a href="commands/help.html" class="command-card">
+                    <code class="command-name">/help</code>
+                    <h3>Get Help</h3>
+                    <p>Display all available commands and their usage.</p>
+                </a>
+            </div>
         </section>
+
+        <aside class="patch-card" aria-labelledby="patch-title" style="max-width: 600px; margin: 0 auto 4rem;">
+            <h3 id="patch-title">Latest patch notes</h3>
+            <ul>
+                <li><span class="status-add">+ Added:</span> Config command</li>
+            </ul>
+        </aside>
 
         <section class="discord-section" aria-labelledby="discord-title">
             <div class="discord-text">
@@ -126,10 +175,37 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; Alpha Development | Developers.com</p>
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p>&copy; 2024 Alpha Development | Developers.com</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                <a href="index.html">Home</a> · 
+                <a href="commands.html">Commands</a> · 
+                <a href="tos.pp.html">ToS & Privacy</a> · 
+                <a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a>
+            </p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

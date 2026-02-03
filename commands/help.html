@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>/help Command - Ticketer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="icon" type="image/png" href="../Bilder/Logo.png" sizes="512x512">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="/help Command - Ticketer">
+    <meta name="theme-color" content="#003fef">
+</head>
+
+<body class="has-nav">
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../Bilder/Logo.png" alt="Ticketer Logo">
+                <span>Ticketer</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../commands.html" class="active">Commands</a></li>
+                <li><a href="../tos.pp.html">ToS & Privacy</a></li>
+                <li><a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="command-detail">
+            <a href="../commands.html" class="back-link">← Back to Commands</a>
+            
+            <div class="command-header">
+                <h1>/help</h1>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Display all available commands</p>
+            </div>
+
+            <div class="command-description-card">
+                <h2>Description</h2>
+                <p>The <code>/help</code> command displays a comprehensive list of all available Ticketer commands along with brief descriptions and usage information. This is perfect for new users getting started or as a quick reference.</p>
+                
+                <div class="command-usage">
+                    /help [command]
+                </div>
+
+                <h3 style="margin-top: 2rem;">Parameters</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>command</strong> (optional): Get detailed help for a specific command</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">How it works</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Shows all available commands in an organized embed</li>
+                    <li>Commands are grouped by category (tickets, management, configuration)</li>
+                    <li>Each command includes a short description</li>
+                    <li>Links to full documentation for detailed information</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Example Usage</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><code>/help</code> - Show all commands</li>
+                    <li><code>/help ticket</code> - Get detailed info about the ticket command</li>
+                </ul>
+            </div>
+
+            <div class="embed-preview">
+                <div class="discord-embed">
+                    <div class="embed-author">
+                        <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
+                        <span class="embed-author-name">Ticketer</span>
+                    </div>
+                    <div class="embed-title">📚 Ticketer Commands</div>
+                    <div class="embed-description">
+                        Here are all available commands. Click the buttons below for more information.
+                    </div>
+                    <div class="embed-field">
+                        <div class="embed-field-name">🎫 Ticket Management</div>
+                        <div class="embed-field-value">/ticket - Create a new ticket<br>/close - Close current ticket<br>/add - Add user to ticket<br>/remove - Remove user from ticket</div>
+                    </div>
+                    <div class="embed-field">
+                        <div class="embed-field-name">⚙️ Configuration</div>
+                        <div class="embed-field-value">/config - Configure bot settings<br>/help - Show this help message</div>
+                    </div>
+                    <div class="embed-footer">
+                        <span class="embed-footer-text">Need more help? Join our support server • Ticket System</span>
+                    </div>
+                    <div class="discord-buttons">
+                        <button class="discord-button">Support Server</button>
+                        <button class="discord-button secondary">Documentation</button>
+                        <button class="discord-button secondary">Report Bug</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0; color: var(--text-secondary); font-style: italic;">
+                Example embed shown above - actual appearance may vary
+            </div>
+
+            <div class="command-nav">
+                <a href="config.html">← /config</a>
+                <a href="../commands.html">All Commands</a>
+                <a href="ticket.html">/ticket →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p>&copy; 2024 Alpha Development | Developers.com</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                <a href="../index.html">Home</a> · 
+                <a href="../commands.html">Commands</a> · 
+                <a href="../tos.pp.html">ToS & Privacy</a> · 
+                <a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

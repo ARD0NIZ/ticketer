@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>/add Command - Ticketer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="icon" type="image/png" href="../Bilder/Logo.png" sizes="512x512">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="/add Command - Ticketer">
+    <meta name="theme-color" content="#003fef">
+</head>
+
+<body class="has-nav">
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../Bilder/Logo.png" alt="Ticketer Logo">
+                <span>Ticketer</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../commands.html" class="active">Commands</a></li>
+                <li><a href="../tos.pp.html">ToS & Privacy</a></li>
+                <li><a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="command-detail">
+            <a href="../commands.html" class="back-link">← Back to Commands</a>
+            
+            <div class="command-header">
+                <h1>/add</h1>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Add a user to the current ticket</p>
+            </div>
+
+            <div class="command-description-card">
+                <h2>Description</h2>
+                <p>The <code>/add</code> command allows support staff to add additional users to a ticket channel. This is useful when multiple people need to be involved in resolving an issue.</p>
+                
+                <div class="command-usage">
+                    /add &lt;user&gt;
+                </div>
+
+                <h3 style="margin-top: 2rem;">Parameters</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>user</strong> (required): The Discord user to add to the ticket</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">How it works</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Grants the specified user view and send message permissions</li>
+                    <li>The user can now see all messages in the ticket</li>
+                    <li>The user can participate in the conversation</li>
+                    <li>All participants are notified when someone is added</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Permissions Required</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Must be used in a ticket channel</li>
+                    <li>Must have support role or administrator permissions</li>
+                </ul>
+            </div>
+
+            <div class="embed-preview">
+                <div class="discord-embed">
+                    <div class="embed-author">
+                        <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
+                        <span class="embed-author-name">Ticketer</span>
+                    </div>
+                    <div class="embed-title">✅ User Added to Ticket</div>
+                    <div class="embed-description">
+                        The user has been successfully added to this ticket and can now view and participate in the conversation.
+                    </div>
+                    <div class="embed-field">
+                        <div class="embed-field-name">Added User</div>
+                        <div class="embed-field-value">@newuser</div>
+                    </div>
+                    <div class="embed-field">
+                        <div class="embed-field-name">Added by</div>
+                        <div class="embed-field-value">@moderator</div>
+                    </div>
+                    <div class="embed-field">
+                        <div class="embed-field-name">Ticket ID</div>
+                        <div class="embed-field-value">#0042</div>
+                    </div>
+                    <div class="embed-footer">
+                        <span class="embed-footer-text">User can now see all ticket history • Ticket System</span>
+                    </div>
+                    <div class="discord-buttons">
+                        <button class="discord-button">View Participants</button>
+                        <button class="discord-button danger">Remove User</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0; color: var(--text-secondary); font-style: italic;">
+                Example embed shown above - actual appearance may vary
+            </div>
+
+            <div class="command-nav">
+                <a href="close.html">← /close</a>
+                <a href="../commands.html">All Commands</a>
+                <a href="remove.html">/remove →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p>&copy; 2024 Alpha Development | Developers.com</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                <a href="../index.html">Home</a> · 
+                <a href="../commands.html">Commands</a> · 
+                <a href="../tos.pp.html">ToS & Privacy</a> · 
+                <a href="https://discord.gg/5dGWwdHa3e" target="_blank">Support</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
