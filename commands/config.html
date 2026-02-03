@@ -39,38 +39,27 @@
             
             <div class="command-header">
                 <h1>/config</h1>
-                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Configure bot settings for your server</p>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">View current bot configuration</p>
             </div>
 
             <div class="command-description-card">
                 <h2>Description</h2>
-                <p>The <code>/config</code> command allows server administrators to configure Ticketer's settings. Set up ticket categories, transcript channels, support roles, and customize how the bot operates in your server.</p>
+                <p>The <code>/config</code> command displays the current configuration of Ticketer for your server, showing the ticket category where new tickets will be created.</p>
                 
                 <div class="command-usage">
-                    /config [option] [value]
+                    /config
                 </div>
-
-                <h3 style="margin-top: 2rem;">Configuration Options</h3>
-                <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>ticket_category</strong>: Set the category where new tickets will be created</li>
-                    <li><strong>transcript_channel</strong>: Set the channel where transcripts will be sent</li>
-                    <li><strong>support_role</strong>: Set the role that can manage tickets</li>
-                    <li><strong>ticket_prefix</strong>: Customize the ticket channel name prefix</li>
-                    <li><strong>view_settings</strong>: Display current configuration</li>
-                </ul>
 
                 <h3 style="margin-top: 2rem;">How it works</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Interactive menu shows all available configuration options</li>
-                    <li>Changes take effect immediately</li>
-                    <li>Configuration is saved per-server</li>
-                    <li>All settings can be modified at any time</li>
+                    <li>Displays the currently configured ticket category</li>
+                    <li>Shows where new tickets will be created</li>
+                    <li>Use <code>/ticketcat</code> to change the ticket category</li>
                 </ul>
 
                 <h3 style="margin-top: 2rem;">Permissions Required</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Administrator permissions required</li>
-                    <li>Bot needs permission to manage channels and roles</li>
+                    <li>No special permissions required to view configuration</li>
                 </ul>
             </div>
 
@@ -80,33 +69,10 @@
                         <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
                         <span class="embed-author-name">Ticketer</span>
                     </div>
-                    <div class="embed-title">⚙️ Server Configuration</div>
-                    <div class="embed-description">
-                        Configure Ticketer settings for your server. Use the buttons below to modify each setting.
-                    </div>
+                    <div class="embed-title">Ticketer Website</div>
                     <div class="embed-field">
-                        <div class="embed-field-name">📂 Ticket Category</div>
-                        <div class="embed-field-value">Support Tickets</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">📝 Transcript Channel</div>
-                        <div class="embed-field-value">#ticket-logs</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">👥 Support Role</div>
-                        <div class="embed-field-value">@Support Team</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">🏷️ Ticket Prefix</div>
-                        <div class="embed-field-value">ticket-</div>
-                    </div>
-                    <div class="embed-footer">
-                        <span class="embed-footer-text">Click buttons to configure settings • Ticket System</span>
-                    </div>
-                    <div class="discord-buttons">
-                        <button class="discord-button">Set Category</button>
-                        <button class="discord-button">Set Channel</button>
-                        <button class="discord-button">Set Role</button>
+                        <div class="embed-field-name">Category:</div>
+                        <div class="embed-field-value">#Tickets</div>
                     </div>
                 </div>
             </div>
