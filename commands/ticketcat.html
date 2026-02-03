@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>/add Command - Ticketer</title>
+    <title>/ticketcat Command - Ticketer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="icon" type="image/png" href="../Bilder/Logo.png" sizes="512x512">
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="/add Command - Ticketer">
+    <meta property="og:title" content="/ticketcat Command - Ticketer">
     <meta name="theme-color" content="#003fef">
 </head>
 
@@ -38,35 +38,30 @@
             <a href="../commands.html" class="back-link">← Back to Commands</a>
             
             <div class="command-header">
-                <h1>/add</h1>
-                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Add a user to the current ticket</p>
+                <h1>/ticketcat</h1>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Set up ticket channel category</p>
             </div>
 
             <div class="command-description-card">
                 <h2>Description</h2>
-                <p>The <code>/add</code> command allows support staff to add additional users to a ticket channel. This is useful when multiple people need to be involved in resolving an issue.</p>
+                <p>The <code>/ticketcat</code> command sets the category where all new ticket channels will be created. This is a required setup step before users can create tickets.</p>
                 
                 <div class="command-usage">
-                    /add &lt;user&gt;
+                    /ticketcat
                 </div>
-
-                <h3 style="margin-top: 2rem;">Parameters</h3>
-                <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>user</strong> (required): The Discord user to add to the ticket</li>
-                </ul>
 
                 <h3 style="margin-top: 2rem;">How it works</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Grants the specified user view and send message permissions</li>
-                    <li>The user can now see all messages in the ticket</li>
-                    <li>The user can participate in the conversation</li>
-                    <li>All participants are notified when someone is added</li>
+                    <li>Sets the ticket channel category for your server</li>
+                    <li>All new tickets will be created in the #Tickets category</li>
+                    <li>After setup, you can use /ticketpanel in channels where users should open tickets</li>
+                    <li>Staff members must have the Manage Channels permission to be recognized as staff</li>
                 </ul>
 
                 <h3 style="margin-top: 2rem;">Permissions Required</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Must be used in a ticket channel</li>
-                    <li>Must have support role or administrator permissions</li>
+                    <li>Administrator permissions required</li>
+                    <li>Bot needs permission to create channels in the category</li>
                 </ul>
             </div>
 
@@ -76,28 +71,11 @@
                         <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
                         <span class="embed-author-name">Ticketer</span>
                     </div>
-                    <div class="embed-title">✅ User Added to Ticket</div>
+                    <div class="embed-title">Ticket Channel Category</div>
                     <div class="embed-description">
-                        The user has been successfully added to this ticket and can now view and participate in the conversation.
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Added User</div>
-                        <div class="embed-field-value">@newuser</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Added by</div>
-                        <div class="embed-field-value">@moderator</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Ticket ID</div>
-                        <div class="embed-field-value">#0042</div>
-                    </div>
-                    <div class="embed-footer">
-                        <span class="embed-footer-text">User can now see all ticket history • Ticket System</span>
-                    </div>
-                    <div class="discord-buttons">
-                        <button class="discord-button">View Participants</button>
-                        <button class="discord-button danger">Remove User</button>
+                        The tickets will be created in the category #Tickets.<br><br>
+                        You can now use <strong>/ticketpanel</strong> in the channel where users should be able to open a ticket.<br><br>
+                        Staff members must have the <strong>Manage Channels</strong> permission in their roles or profiles in order to be recognized as staff.
                     </div>
                 </div>
             </div>
@@ -107,9 +85,9 @@
             </div>
 
             <div class="command-nav">
-                <a href="close.html">← /close</a>
+                <a href="help.html">← /help</a>
                 <a href="../commands.html">All Commands</a>
-                <a href="remove.html">/remove →</a>
+                <a href="ticketpanel.html">/ticketpanel →</a>
             </div>
         </div>
     </main>

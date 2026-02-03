@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>/close Command - Ticketer</title>
+    <title>/ticketpanel Command - Ticketer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="icon" type="image/png" href="../Bilder/Logo.png" sizes="512x512">
@@ -12,11 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="/close Command - Ticketer">
+    <meta property="og:title" content="/ticketpanel Command - Ticketer">
     <meta name="theme-color" content="#003fef">
 </head>
 
 <body class="has-nav">
+    <!-- Navigation Header -->
     <nav class="nav-header">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">
@@ -38,35 +39,37 @@
             <a href="../commands.html" class="back-link">← Back to Commands</a>
             
             <div class="command-header">
-                <h1>/close</h1>
-                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Close the current ticket and create a transcript</p>
+                <h1>/ticketpanel</h1>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Create a ticket submission panel</p>
             </div>
 
             <div class="command-description-card">
                 <h2>Description</h2>
-                <p>The <code>/close</code> command closes the current ticket channel and generates a complete transcript of all messages. This is useful for archiving resolved support cases and maintaining records.</p>
+                <p>The <code>/ticketpanel</code> command creates an interactive panel with a button that allows users to create support tickets. This panel provides a user-friendly interface where members can simply click a button to submit a support ticket.</p>
                 
                 <div class="command-usage">
-                    /close [reason]
+                    /ticketpanel
                 </div>
-
-                <h3 style="margin-top: 2rem;">Parameters</h3>
-                <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>reason</strong> (optional): Brief explanation of why the ticket is being closed</li>
-                </ul>
 
                 <h3 style="margin-top: 2rem;">How it works</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Creates a complete transcript of all messages in the ticket</li>
-                    <li>Sends the transcript to the configured transcripts channel</li>
-                    <li>Deletes the ticket channel after a short delay</li>
-                    <li>Notifies relevant parties that the ticket was closed</li>
+                    <li>Creates an embed message with a "Create a Ticket" button</li>
+                    <li>Users can click the button to create a new support ticket</li>
+                    <li>The panel explains that the support team will respond promptly</li>
+                    <li>Panel can be placed in any channel where users should be able to open tickets</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">When to use</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Place in your support or help channel</li>
+                    <li>Provides an easy, visible way for users to get help</li>
+                    <li>Must configure ticket category first using <code>/ticketcat</code></li>
                 </ul>
 
                 <h3 style="margin-top: 2rem;">Permissions Required</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>Must be used in a ticket channel</li>
-                    <li>Must have support role or be the ticket creator</li>
+                    <li>Must have Manage Channels permission or be an administrator</li>
+                    <li>Bot needs permission to send messages and create embeds in the channel</li>
                 </ul>
             </div>
 
@@ -74,30 +77,17 @@
                 <div class="discord-embed">
                     <div class="embed-author">
                         <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
-                        <span class="embed-author-name">Ticketer</span>
+                        <span class="embed-author-name">- System</span>
                     </div>
-                    <div class="embed-title">🔒 Close This Ticket?</div>
+                    <div class="embed-title">Create a Ticket!</div>
                     <div class="embed-description">
-                        Are you sure you want to close this ticket? A transcript will be saved and sent to the configured channel.
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Ticket ID</div>
-                        <div class="embed-field-value">#0042</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Closed by</div>
-                        <div class="embed-field-value">@moderator</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Transcript</div>
-                        <div class="embed-field-value">Will be sent to #ticket-logs</div>
-                    </div>
-                    <div class="embed-footer">
-                        <span class="embed-footer-text">This action cannot be undone • Ticket System</span>
+                        Looking for help?<br>
+                        Simply click the button below to submit a support Ticket.<br><br>
+                        Our dedicated support team will respond to your request promptly to assist you with your needs.<br><br>
+                        Click right here ↓
                     </div>
                     <div class="discord-buttons">
-                        <button class="discord-button danger">Confirm Close</button>
-                        <button class="discord-button secondary">Cancel</button>
+                        <button class="discord-button success">🎫 Create a Ticket</button>
                     </div>
                 </div>
             </div>
@@ -107,9 +97,9 @@
             </div>
 
             <div class="command-nav">
-                <a href="ticket.html">← /ticket</a>
+                <a href="ticketcat.html">← /ticketcat</a>
                 <a href="../commands.html">All Commands</a>
-                <a href="add.html">/add →</a>
+                <a href="ticketcontrolpanel.html">/ticketcontrolpanel →</a>
             </div>
         </div>
     </main>

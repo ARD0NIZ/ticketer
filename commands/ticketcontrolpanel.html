@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>/ticket Command - Ticketer</title>
+    <title>/ticketcontrolpanel Command - Ticketer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="icon" type="image/png" href="../Bilder/Logo.png" sizes="512x512">
@@ -12,12 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="/ticket Command - Ticketer">
+    <meta property="og:title" content="/ticketcontrolpanel Command - Ticketer">
     <meta name="theme-color" content="#003fef">
 </head>
 
 <body class="has-nav">
-    <!-- Navigation Header -->
     <nav class="nav-header">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">
@@ -39,29 +38,39 @@
             <a href="../commands.html" class="back-link">← Back to Commands</a>
             
             <div class="command-header">
-                <h1>/ticket</h1>
-                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Create a new support ticket</p>
+                <h1>/ticketcontrolpanel</h1>
+                <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--text-secondary);">Create a control panel for managing tickets</p>
             </div>
 
             <div class="command-description-card">
                 <h2>Description</h2>
-                <p>The <code>/ticket</code> command allows users to create a new support ticket in your Discord server. When executed, the bot will create a private channel where the user can describe their issue and receive help from your support team.</p>
+                <p>The <code>/ticketcontrolpanel</code> command creates a control panel with buttons that allow staff to manage tickets efficiently. The panel includes buttons for claiming, closing, reopening, deleting, and generating transcripts.</p>
                 
                 <div class="command-usage">
-                    /ticket [reason]
+                    /ticketcontrolpanel
                 </div>
 
-                <h3 style="margin-top: 2rem;">Parameters</h3>
+                <h3 style="margin-top: 2rem;">Control Panel Buttons</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>reason</strong> (optional): Brief description of why you're creating the ticket</li>
+                    <li><strong>Claim</strong> (green): Assign the ticket to yourself</li>
+                    <li><strong>Close</strong> (blue): Close the ticket and restrict access</li>
+                    <li><strong>Opened</strong> (gray): Reopen a closed ticket</li>
+                    <li><strong>Delete</strong> (red): Permanently delete the ticket channel</li>
+                    <li><strong>Transcript</strong> (blue): Generate a transcript of the ticket</li>
                 </ul>
 
                 <h3 style="margin-top: 2rem;">How it works</h3>
                 <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li>A new private channel is created in the configured ticket category</li>
-                    <li>Only the ticket creator and support staff can see the channel</li>
-                    <li>The bot sends an initial message with ticket information</li>
-                    <li>Support team members are automatically notified</li>
+                    <li>Creates an interactive panel in the ticket channel</li>
+                    <li>Staff can click buttons to perform ticket management actions</li>
+                    <li>Each action is logged and can be tracked</li>
+                    <li>Provides quick access to all ticket management functions</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Permissions Required</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Must be used in a ticket channel</li>
+                    <li>Must have support role or administrator permissions</li>
                 </ul>
             </div>
 
@@ -69,30 +78,18 @@
                 <div class="discord-embed">
                     <div class="embed-author">
                         <img src="../Bilder/Logo.png" alt="Bot Icon" class="embed-author-icon">
-                        <span class="embed-author-name">Ticketer</span>
+                        <span class="embed-author-name">- System</span>
                     </div>
-                    <div class="embed-title">🎫 Ticket Created Successfully</div>
+                    <div class="embed-title">Ticket panel!</div>
                     <div class="embed-description">
-                        Your support ticket has been created. Our team will respond as soon as possible.
+                        Use the buttons to controle this Ticket!
                     </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Ticket ID</div>
-                        <div class="embed-field-value">#0042</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Created by</div>
-                        <div class="embed-field-value">@username</div>
-                    </div>
-                    <div class="embed-field">
-                        <div class="embed-field-name">Status</div>
-                        <div class="embed-field-value">🟢 Open</div>
-                    </div>
-                    <div class="embed-footer">
-                        <span class="embed-footer-text">Please describe your issue in detail • Ticket System</span>
-                    </div>
-                    <div class="discord-buttons">
-                        <button class="discord-button danger">Close Ticket</button>
-                        <button class="discord-button secondary">Add User</button>
+                    <div class="discord-buttons" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1rem;">
+                        <button class="discord-button" style="background: #43b581;">✋ Claim</button>
+                        <button class="discord-button" style="background: #5865f2;">🔒 Close</button>
+                        <button class="discord-button" style="background: #4f545c;">🔄 Opened</button>
+                        <button class="discord-button danger" style="background: #ed4245;">❌ Delete</button>
+                        <button class="discord-button" style="background: #5865f2;">📝 Transcript</button>
                     </div>
                 </div>
             </div>
@@ -102,9 +99,9 @@
             </div>
 
             <div class="command-nav">
-                <a href="help.html">← /help</a>
+                <a href="ticketpanel.html">← /ticketpanel</a>
                 <a href="../commands.html">All Commands</a>
-                <a href="close.html">/close →</a>
+                <a href="statistics.html">/statistics →</a>
             </div>
         </div>
     </main>
